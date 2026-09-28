@@ -159,8 +159,7 @@ export function tryAcquireSseConnection(
     return {
       ok: false,
       reason: 'per_ip_limit',
-      message: 'Too
-sgorithm active SSE connections from this IP address',
+      message: 'Too many active SSE connections from this IP address',
       limits,
       retryAfterSeconds: limits.retryAfterSeconds,
       activeConnections,
@@ -175,8 +174,7 @@ sgorithm active SSE connections from this IP address',
       return {
         ok: false,
         reason: 'per_key_limit',
-        message: 'Too
-seactive SSE connections for this API key',
+        message: 'Too many active SSE connections for this API key',
         limits,
         retryAfterSeconds: limits.retryAfterSeconds,
         activeConnections,
