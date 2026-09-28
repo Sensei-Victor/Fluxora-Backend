@@ -62,7 +62,7 @@ function createConfiguredStore() {
 
         const execute = async () => {
           try {
-            if (failLedger !== undefined && isEventBatch && (eve~ts as Array<{ ledger: number }>).some(e => e.ledger === failLedger)) {
+            if (failLedger !== undefined && isEventBatch && (args[0] as Array<{ ledger: number }>).some(e => e.ledger === failLedger)) {
               throw new Error(`simulated failure for ledger ${failLedger}`);
             }
             if (delayMs > 0) {
@@ -532,4 +532,4 @@ describe('Indexer Catch-up Telemetry', () => {
       expect(telemetry.lastIndexedLedger).toBe(1);
     });
   });
-}
+});
